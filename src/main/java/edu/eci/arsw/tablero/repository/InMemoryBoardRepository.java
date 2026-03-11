@@ -58,15 +58,15 @@ public class InMemoryBoardRepository implements BoardRepository {
         return new HashSet<>(boards.values());
     }
 
-    @Override
-    public void addPoint(String author,String name,float x,float y,String color){
+        @Override
+        public void addPoint(String author,String name,float x,float y,String color){
 
-        Board board = boards.get(keyOf(author,name));
+            Board board = boards.get(keyOf(author,name));
 
-        if(board != null){
-            board.addPoint(new Point(x,y,color));
+            if(board != null){
+                board.addPoint(new Point(x,y,color));
+            }
         }
-    }
 
     @Override
     public void clearBoard(String author,String name){

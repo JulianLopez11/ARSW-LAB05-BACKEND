@@ -6,13 +6,14 @@ public class Point {
     private float y;
     private String color;
 
-    public Point() {}
+    public Point(){}
 
-    public Point(float x, float y, String color) {
+    public Point(float x, float y, String color){
         this.x = x;
         this.y = y;
         this.color = color;
     }
+
 
     public float getX() { 
         return x; 
