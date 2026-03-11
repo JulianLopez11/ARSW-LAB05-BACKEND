@@ -22,12 +22,23 @@ public class WebSocketController {
     @MessageMapping("/draw")
     public void onDraw(DrawEvent evt) {
         try {
-            services.addPoint(evt.author(), evt.name(), evt.point().getX(), evt.point().getY(), evt.point().getColor());
-            Board updatedBoard = services.getBoard(evt.author(), evt.name());
-            template.convertAndSend("/topic/boards." + evt.author() + "." + evt.name(), updatedBoard);
+            services.addPoint(evt.getAuthor(), evt.getName(), evt.getPoint().getX(), evt.getPoint().getY(), evt.getPoint().getColor());
+            Board updatedBoard = services.getBoard(evt.getAuthor(), evt.getName());
+            template.convertAndSend("/topic/boards." + evt.getAuthor() + "." + evt.getName(), updatedBoard);
             
         } catch (Exception e) {
             System.err.println("Error en dibujo RT: " + e.getMessage());
+        }
+    }
+
+    @MessageMapping("/clear")
+    public void onClear(DrawEvent evt) {
+        try {
+            services.clearBoard(evt.getAuthor(), evt.getName());
+            template.convertAndSend("/topic/boards." + evt.getAuthor() + "." + evt.getName(), 
+                services.getBoard(evt.getAuthor(), evt.getName()));
+        } catch (Exception e) {
+            System.err.println("Error al borrar: " + e.getMessage());
         }
     }
 }
