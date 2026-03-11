@@ -36,7 +36,7 @@ public class WebSocketController {
         try {
             services.clearBoard(evt.getAuthor(), evt.getName());
             template.convertAndSend("/topic/boards." + evt.getAuthor() + "." + evt.getName(), 
-                services.getBoard(evt.getAuthor(), evt.getName()));
+            services.getBoard(evt.getAuthor(), evt.getName()));
         } catch (Exception e) {
             System.err.println("Error al borrar: " + e.getMessage());
         }
