@@ -5,7 +5,9 @@ un tablero compartido. El tablero debe permitir a múltiples usuarios dibujar en
 proveer un botón de borrado. Lo que cada persona dibuje debe aparecer en el tablero de
 todas las otras personas. Cada persona debe iniciar con un color diferente. Cuándo alguien
 oprime el botón de borrar el tablero se borra para todas las personas.
+
 ---
+
 
 ## Tecnologías
 
