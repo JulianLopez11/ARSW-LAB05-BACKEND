@@ -156,7 +156,7 @@ client.connect({}, () => {
 ```
 ## EC2 Evidencia 
 
-![alt text](docs/img/image.png)
+![alt text](docs/img/ec2.png)
 ---
 
 ## Swagger
