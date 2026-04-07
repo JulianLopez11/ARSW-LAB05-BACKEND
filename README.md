@@ -31,12 +31,12 @@ src/main/java/edu/eci/arsw/tablero/
 │   └── DrawEvent.java           # DTO para los eventos de dibujo
 ├── model/
 │   ├── Board.java               # Modelo del tablero
-│   └── Point.java               # Modelo de un punto (x, y, color)
+│   └── Point.java              
 ├── repository/
 │   ├── BoardRepository.java          # Interfaz del repositorio
 │   └── InMemoryBoardRepository.java  # Implementación en memoria (ConcurrentHashMap)
 └── services/
-    └── BoardService.java        # Lógica de negocio
+    └── BoardService.java        
 ```
 
 ---
@@ -53,7 +53,8 @@ src/main/java/edu/eci/arsw/tablero/
 ```bash
 git clone <url-del-repo>
 cd ARSW-LAB05-BACKEND
-mvn spring-boot:run
+./mvnw clean package
+./mvnw spring-boot:run
 ```
 
 El servidor queda corriendo en `http://localhost:8080`.
@@ -151,7 +152,9 @@ client.connect({}, () => {
   }));
 });
 ```
+## EC2 Evidencia 
 
+![alt text](docs/img/image.png)
 ---
 
 ## Swagger
